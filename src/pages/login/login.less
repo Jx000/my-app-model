@@ -1,0 +1,96 @@
+#login{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url('../../assets/images/bg.png') no-repeat;
+    background-size: 100% 100%;
+    .container{
+        display: flex;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 450px;
+        background: #fff;
+        border-radius: 4px;
+        .left, .right{
+            flex: 1;
+        }
+        .left {
+            position: relative;
+            img{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 285px;
+                height: 338px;
+                transform: translate(-50%, -50%);
+            }
+        }
+        .right {
+            padding: 40px 45px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            .phone, .password {
+                position: relative;
+                font-size: 14px;
+                color: #999;
+                border-bottom: 1px solid #eee;
+                padding: 10px 0;
+                line-height: 100%;
+                margin-top:40px;
+                text-align: left;
+                span{
+                    display: inline-block;
+                    width: 50px;
+                    vertical-align: middle;
+                    text-align: justify;
+                    text-align-last: justify;
+                }
+                input{
+                    display: inline-block;
+                    border: none;
+                    width: 70%;
+                    outline-style: none;
+                    margin-left: 10px;
+                    padding: 5px 0;
+                    vertical-align: middle;
+                } 
+            }
+            .identity{
+                position: relative;
+                font-size: 14px;
+                color: #999;
+                border-bottom: 1px solid #eee;
+                padding: 10px 0;
+                line-height: 100%;
+                margin-top:40px;
+                text-align: left;
+                .indentitySpan{
+                    display: inline-block;
+                    width: 50px;
+                    vertical-align: middle;
+                    text-align: justify;
+                    text-align-last: justify;
+                }
+                .ant-radio-group {
+                    margin-left: 10px;
+                }
+            }
+            .submit{
+                background: #5cdbd3;
+                text-align: center;
+                color: #FFFFFF;
+                font-size: 14px;
+                padding: 16px 0;
+                border-radius: 4px;
+                margin-top: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}
