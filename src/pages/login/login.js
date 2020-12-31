@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { Radio, Input } from 'antd'
+import {connect} from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import './login.less'
 import image from '../../assets/images/login.png'
 
+import { reqLogin } from '../../redux/action'
+
 class Login extends Component {
 
     state = {
-        phone: '',
-        password: '',
-        identityType: ''
+        phone: '15957186843',
+        password: '123456',
+        identityType: 1
     }
 
     handleChange = (name, val) => {
@@ -19,11 +23,15 @@ class Login extends Component {
     }
 
     handleClick = () => {
-       console.log(this.state)
+        this.props.reqLogin(this.state)
     }
 
     render() {
         const {phone, password, identityType} = this.state
+        const { id } = this.props.userMsg
+        if(id){
+            return <Redirect to = '/'></Redirect>
+        }
         return (
             <div id="login">
                 <div className="container">
@@ -57,4 +65,12 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+    userMsg: state.userMsg
+})
+
+const mapDispatchToProps = {
+    reqLogin
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

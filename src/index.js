@@ -6,6 +6,7 @@ import {Provider} from 'react-redux'
 import store from './redux/store'
 
 import Login from './pages/login/login'
+import Main from './pages/main/main'
 
 import 'antd/dist/antd.less'
 
@@ -17,6 +18,7 @@ render(
             <BrowserRouter>
                 <Switch>
                     <Route path="/login" component={Login}></Route>
+                    <Route component={Main}></Route>
                 </Switch>
             </BrowserRouter>
         </Provider>

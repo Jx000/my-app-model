@@ -1,0 +1,100 @@
+{
+    "supplier": [
+        {
+            "name": "订单",
+            "url": "order",
+            "icon": "<DatabaseTwoTone />",
+            "children": [
+                {
+                    "name": "订单列表",
+                    "url": "/supplier/order/list"
+                },
+                {
+                    "name": "退货订单",
+                    "url": "/supplier/order/return-order"
+                },
+                {
+                    "name": "退货管理",
+                    "url": "/supplier/order/return-manage"
+                }
+            ]
+        },
+        {
+            "name": "商品",
+            "url": "commodity",
+            "icon": "el-icon-s-goods",
+            "children": [
+                {
+                    "name": "商品列表",
+                    "url": "/supplier/commodity/list"
+                }
+            ]
+        },
+        {
+            "name": "财务",
+            "url": "finance",
+            "icon": "el-icon-s-finance",
+            "children": [
+                {
+                    "name": "账单信息",
+                    "url": "/supplier/finance/info"
+                },
+                {
+                    "name": "客户列表",
+                    "url": "/supplier/finance/client-list"
+                },
+                {
+                    "name": "会员等级",
+                    "url": "/supplier/finance/membership-level"
+                },
+                {
+                    "name": "销售统计",
+                    "url": "/supplier/finance/sale-statistics"
+                }
+            ]
+        },
+        {
+            "name": "仓库",
+            "url": "warehouse",
+            "icon": "el-icon-s-home",
+            "children": [
+                {
+                    "name": "仓库列表",
+                    "url": "/supplier/warehouse/list"
+                }
+            ]
+        }
+    ],
+    "sellers": [
+        {
+            "name": "订单",
+            "url": "order",
+            "icon": "el-icon-s-order",
+            "children": [
+                {
+                    "name": "订单信息",
+                    "url": "/sellers/order/info"
+                },
+                {
+                    "name": "退货订单",
+                    "url": "/sellers/order/return-order"
+                }
+            ]
+        },
+        {
+            "name": "财务",
+            "url": "finance",
+            "icon": "el-icon-s-finance",
+            "children": [
+                {
+                    "name": "账单信息",
+                    "url": "/sellers/finance/bill-info"
+                },
+                {
+                    "name": "钱包白条",
+                    "url": "/sellers/finance/wallet-white"
+                }
+            ]
+        }
+    ]
+}
