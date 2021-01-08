@@ -10,9 +10,10 @@ import LeftMenu from '../../components/left-menu/left-menu'
 import HeadNav from '../../components/head-nav/head-nav';
 import SupplierOrderList from '../supplier/order/list';
 import SupplierCommodityList from '../supplier/commodity/list';
+import AddCommodity from '../supplier/add-commodity/add-commodity';
 
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 class Main extends Component {
     render() {
@@ -30,6 +31,7 @@ class Main extends Component {
                         <Switch>
                             <Route path="/supplier/order/list" component={SupplierOrderList}></Route>
                             <Route path="/supplier/commodity/list" component={SupplierCommodityList}></Route>
+                            <Route path="/supplier/add-commodity/add-commodity" component={AddCommodity}></Route>
                         </Switch>
                     </Content>
                 </Layout>

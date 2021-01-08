@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Radio, Input } from 'antd'
+import { Radio } from 'antd'
 import {connect} from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -23,6 +23,7 @@ class Login extends Component {
     }
 
     handleClick = () => {
+        localStorage.setItem('identityType', this.state.identityType)
         this.props.reqLogin(this.state)
     }
 

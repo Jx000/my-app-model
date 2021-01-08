@@ -1,13 +1,15 @@
 
-import { login } from '../axios/api'
+import { login, supplierCommodityList } from '../axios/api'
 
-import { LOGIN_SUCCESS } from './action-type'
+import { LOGIN_SUCCESS, COMMODITY_LIST } from './action-type'
 
 import { message } from 'antd'
 import md5 from 'md5'
 
 
 const userData = (userParam) => ({type: LOGIN_SUCCESS, data: userParam})
+
+const commodityListData = (commodityListParam) => ({type: COMMODITY_LIST, data: commodityListParam})
 
 // 登录
 export const reqLogin = (userParam) => {
@@ -31,3 +33,12 @@ export const reqLogin = (userParam) => {
         }))
     }
 } 
+
+//获取商品列表
+export const reqCommodityList = (commodityListParam) => {
+    const param = commodityListParam
+    return async dispatch => {
+        const {data} = await supplierCommodityList(param)
+        dispatch(commodityListData(data))
+    }
+}

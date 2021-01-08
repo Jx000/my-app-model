@@ -8,15 +8,16 @@ const {Item} = Breadcrumb
 class HeadNav extends Component {
 
     render() {
-        const {name} = this.props.location.state
+        // console.log(this.props.location)
+        // const {name} = this.props.location.state
         return (
             <div>
                 <Breadcrumb>
                     <Item>首页</Item>
                     <Item>供应商</Item>
-                    <Item>{name}</Item>
+                    {/* <Item>{name}</Item> */}
                 </Breadcrumb>
-                
+
             </div>
         )
     }
