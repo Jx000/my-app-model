@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const arr = ['s', 'l', 'b', 'm', 'c', 'a', 'n', 'x', 'y']
+    const arr1 = [{attr: 's', info: '1'}, {attr: 'm', info: '2'},{attr: 'l', info: '3'},{attr: 'a', info: '4'},{attr: 'b', info: '5'},{attr: 'c', info: '6'}]
+    
+    let arr2 = []
+    arr1.map(val => {
+        arr2.push(val.attr)
+    })
+    // console.log(arr2)
+    let a =  arr.reduce((acc, cur) => {
+        arr2.indexOf(cur) === -1 ? acc.push(cur) : ''
+        return acc
+    },[])
+    // console.log(a)
+
+    let obj = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+    }
+
+    for(val in obj){
+        console.log(obj[val])
+    }
+</script>
+</html>

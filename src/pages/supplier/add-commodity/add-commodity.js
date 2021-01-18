@@ -20,9 +20,9 @@ export class AddCommodity extends Component {
         const {current} = this.state
 
         let StepContent
-        if(current == 0){
+        if(current === 0){
             (StepContent = <CommodityInfo current={current}/>)
-        }else if(current == 1){
+        }else if(current === 1){
             (StepContent = <CommodityAttr />)
         }else{
             (StepContent = <CommodityDetail />)
