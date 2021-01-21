@@ -21,7 +21,8 @@ export class CommodityInfo extends Component {
         loading: false,
         initialValues: {
             identifier: 'KL001',
-            name: '上衣'
+            name: '上衣',
+            applicableObject: '女',
         }
     }
 
@@ -45,7 +46,23 @@ export class CommodityInfo extends Component {
         const onFinish = (values) => {
             console.log(values)
         }
-
+        const optionsCrowd = [{
+            key: 1,
+            label: '男',
+            value: '男'
+        },{
+            key: 2,
+            label: '女',
+            value: '女'
+        },{
+            key: 3,
+            label: '儿童',
+            value: '儿童'
+        },{
+            key: 4,
+            label: '通用',
+            value: '通用'
+        }]
         return (
             <Form initialValues={this.state.initialValues}  name="basic" {...layout} onFinish={onFinish} scrollToFirstError={true}>
                 <Item required label="供应商货号" name="identifier" rules={[{required: true, message: '请输入供应商货号'}]}>
@@ -54,17 +71,22 @@ export class CommodityInfo extends Component {
                 <Item required label="商品名称" name="name" rules={[{required: true, message: '请输入商品名称'}]}>
                     <Input />
                 </Item>
-                <Item required label="商品分类" rules={[{required: true, message: '请输入商品名称'}]}>
-                    <Cascader options={options} placeholder="请选择分类" />
+                <Item required label="商品品牌" rules={[{required: true, message: '请选择商品品牌'}]}>
+                    <Cascader options={options} placeholder="请选择品牌" />
                 </Item>
-                <Item required label="商品分类" rules={[{required: true, message: '请输入商品名称'}]}>
+                <Item required label="商品分类" rules={[{required: true, message: '请选择商品分类'}]}>
                     <Select>
                         <Option value="jack">Jack</Option>
                     </Select>
                 </Item>
-                <Item required label="适用人群" rules={[{required: true, message: '请选择适用人群'}]}>
-                    <Select>
-                        <Option value="jack">Jack</Option>
+                <Item required label="适用人群" name="applicableObject" rules={[{required: true, message: '请选择适用人群'}]}>
+                    <Select allowClear>
+                        {
+                            optionsCrowd.map(crowd => (
+                                <Option value={crowd.value} key={crowd.key}>{crowd.label}</Option>
+                            ))
+                        }
+                        
                     </Select>
                 </Item>
                 <Item required label="标箱说明" rules={[{required: true, message: '请输入标箱说明'}]}>

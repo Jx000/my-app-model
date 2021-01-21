@@ -31,7 +31,7 @@ class Main extends Component {
                         <Switch>
                             <Route path="/supplier/order/list" component={SupplierOrderList}></Route>
                             <Route path="/supplier/commodity/list" component={SupplierCommodityList}></Route>
-                            <Route path="/supplier/add-commodity/add-commodity" component={AddCommodity}></Route>
+                            <Route path="/supplier/add-commodity/add-commodity/:id" component={AddCommodity}></Route>
                         </Switch>
                     </Content>
                 </Layout>

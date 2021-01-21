@@ -17,6 +17,7 @@ export class AddCommodity extends Component {
     }
 
     render() {
+        // console.log(this.props.match.params)
         const {current} = this.state
 
         let StepContent

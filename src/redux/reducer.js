@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
 
-import { LOGIN_SUCCESS, COMMODITY_LIST } from './action-type'
+import { LOGIN_SUCCESS, COMMODITY_LIST, COMMODITY_INFO } from './action-type'
 
 const user = {
     phone: '',
@@ -29,7 +29,16 @@ function commodityListData(state = [], action) {
     }
 }
 
+function commodityInfo(state = {}, action) {
+    switch (action.type) {
+        case COMMODITY_INFO: 
+            return action.data
+        default: 
+            return state
+    }
+}
+
 
 export default combineReducers({
-    userMsg, commodityListData
+    userMsg, commodityListData, commodityInfo
 })

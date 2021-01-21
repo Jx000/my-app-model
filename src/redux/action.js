@@ -1,7 +1,7 @@
 
-import { login, supplierCommodityList } from '../axios/api'
+import { login, supplierCommodityList, commoditySearch } from '../axios/api'
 
-import { LOGIN_SUCCESS, COMMODITY_LIST } from './action-type'
+import { LOGIN_SUCCESS, COMMODITY_LIST, COMMODITY_INFO } from './action-type'
 
 import { message } from 'antd'
 import md5 from 'md5'
@@ -10,6 +10,8 @@ import md5 from 'md5'
 const userData = (userParam) => ({type: LOGIN_SUCCESS, data: userParam})
 
 const commodityListData = (commodityListParam) => ({type: COMMODITY_LIST, data: commodityListParam})
+
+const commodityInfoData = (param) => ({type: COMMODITY_INFO, data: param})
 
 // 登录
 export const reqLogin = (userParam) => {
@@ -40,5 +42,14 @@ export const reqCommodityList = (commodityListParam) => {
     return async dispatch => {
         const {data} = await supplierCommodityList(param)
         dispatch(commodityListData(data))
+    }
+}
+
+// 获取商品分类，品牌，
+export const reqCommodityInfo = (commodityInfoParam) => {
+    const param  = commodityInfoParam
+    return async dispatch => {
+        const {data} = await commoditySearch(param)
+        dispatch(commodityInfoData(data))
     }
 }
