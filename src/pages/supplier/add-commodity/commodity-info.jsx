@@ -86,7 +86,6 @@ export class CommodityInfo extends Component {
                                 <Option value={crowd.value} key={crowd.key}>{crowd.label}</Option>
                             ))
                         }
-                        
                     </Select>
                 </Item>
                 <Item required label="标箱说明" rules={[{required: true, message: '请输入标箱说明'}]}>
